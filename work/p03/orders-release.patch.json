@@ -12,7 +12,7 @@
               },
               {
                 "name": "INVENTORY_BASE_URL",
-                "value": "http://inventory-inexistente:8080"
+                "value": "http://inventory:8080"
               }
             ]
           }
