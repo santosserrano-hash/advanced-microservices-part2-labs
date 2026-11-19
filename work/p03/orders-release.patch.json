@@ -1,0 +1,23 @@
+{
+  "spec": {
+    "template": {
+      "spec": {
+        "containers": [
+          {
+            "name": "orders",
+            "env": [
+              {
+                "name": "APP_VERSION",
+                "value": "0.2.0-lab"
+              },
+              {
+                "name": "INVENTORY_BASE_URL",
+                "value": "http://inventory:8080"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -87,3 +87,5 @@ jobs:
           PY
       - name: Ensure student materials are independent of the course delivery
         run: python3 scripts/check-no-lab-durations.py
+      - name: P03 release policy
+        run: python3 labs/p03-rollouts-ci/scripts/check-release.py work/p03/orders-release.patch.json

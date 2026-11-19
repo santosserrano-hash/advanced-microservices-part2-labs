@@ -1,0 +1,31 @@
+# STARTER: copy to work/p02 and complete all TODOs before patching.
+# Strategic merge: change only the Orders container; preserve image, env and security.
+spec:
+  template:
+    spec:
+      containers:
+        - name: orders
+          resources:
+            requests:
+              cpu: 100m # TODO: CPU reservation required by the exercise
+          startupProbe:
+            httpGet:
+              path: /actuator/health # TODO: verified startup endpoint
+              port: http
+            periodSeconds: 5 # TODO
+            failureThreshold: 36 # TODO
+            timeoutSeconds: 2
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness # TODO: verified readiness endpoint
+              port: http
+            periodSeconds: 5 # TODO
+            failureThreshold: 3 # TODO
+            timeoutSeconds: 2
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness # TODO: verified liveness endpoint
+              port: http
+            periodSeconds: 10 # TODO
+            failureThreshold: 3 # TODO
+            timeoutSeconds: 2

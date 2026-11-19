@@ -1,0 +1,22 @@
+# STARTER: copy to work/p02 and complete all TODOs before applying.
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: orders
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: orders
+  minReplicas: 2 # TODO
+  maxReplicas: 3 # TODO
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 60 # TODO
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 120 # TODO
